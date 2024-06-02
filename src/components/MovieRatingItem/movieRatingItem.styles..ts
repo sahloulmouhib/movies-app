@@ -1,3 +1,4 @@
+import {colors} from '_utils/colors';
 import {StyleSheet} from 'react-native';
 
 export default StyleSheet.create({
@@ -15,5 +16,6 @@ export default StyleSheet.create({
   valueText: {
     fontSize: 20,
     fontWeight: '400',
+    color: colors.BLACK,
   },
 });

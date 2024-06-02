@@ -26,6 +26,7 @@ interface CustomFlatListProps<T = any> extends FlatListProps<T> {
 
   getDataOnMount: () => void;
   getMoreData?: () => void;
+  getNextPage?: () => void;
   getRefreshedData: () => void;
 
   failedError?: string;
@@ -49,6 +50,7 @@ const CustomFlatList = <T,>({
   getRefreshedData,
   // eslint-disable-next-line @typescript-eslint/no-unused-vars
   refreshError,
+  getNextPage,
   onEndReachedThreshold = ON_END_REACHED_THRESHOLD,
   ...otherProps
 }: CustomFlatListProps<T>) => {
@@ -84,7 +86,7 @@ const CustomFlatList = <T,>({
   const renderFooter = useMemo(() => {
     return (
       <FooterFlatList
-        getMoreData={getMoreData}
+        getMoreData={getNextPage}
         isLoadingMore={isLoadingMore}
         loadingMoreError={loadingMoreError}
       />

@@ -6,4 +6,13 @@ export default StyleSheet.create({
     fontSize: 20,
     color: colors.BLACK,
   },
+  icon: {
+    width: 25,
+    height: 25,
+  },
+  itemContainer: {
+    flexDirection: 'row',
+    alignItems: 'center',
+    gap: 8,
+  },
 });

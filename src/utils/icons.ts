@@ -13,4 +13,5 @@ export const icons = {
   IMDB: require('../assets/icons/imdb/imdb.png'),
   ROTTEN_TOMATOES: require('../assets/icons/rotten_tomatoes/rotten_tomatoes.png'),
   METACRITIC: require('../assets/icons/metacritic/metacritic.png'),
+  DRAMA: require('../assets/icons/drama/drama.png'),
 };

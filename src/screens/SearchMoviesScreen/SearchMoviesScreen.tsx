@@ -44,6 +44,7 @@ const SearchMoviesScreen: React.FC<SearchMoviesScreenProps> = ({
     isLoadingMore,
     getMoreData,
     loadingMoreDataError,
+    getNextPage,
   } = useCustomPaginationQuery<Movie, GetMovieListParams>(
     result,
     {
@@ -90,6 +91,7 @@ const SearchMoviesScreen: React.FC<SearchMoviesScreenProps> = ({
         loadingMoreError={loadingMoreDataError}
         refreshError={refreshError}
         renderItem={renderMovieItem}
+        getNextPage={getNextPage}
       />
     </SafeAreaView>
   );

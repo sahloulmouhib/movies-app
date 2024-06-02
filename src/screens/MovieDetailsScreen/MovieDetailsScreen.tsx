@@ -95,12 +95,14 @@ const MovieDetailsScreen: React.FC<MovieDetailsScreenProps> = ({
                   </Text>
                   <ActorItemList actors={data.actors} />
                 </View>
-                <View style={styles.categoryContainer}>
-                  <Text style={styles.categoryTitleText}>
-                    {translate('movies.ratings')}
-                  </Text>
-                  <MovieRatingItemList list={data.ratings} />
-                </View>
+                {data.ratings.length > 0 && (
+                  <View style={styles.categoryContainer}>
+                    <Text style={styles.categoryTitleText}>
+                      {translate('movies.ratings')}
+                    </Text>
+                    <MovieRatingItemList list={data.ratings} />
+                  </View>
+                )}
               </View>
             </ScrollView>
           )}

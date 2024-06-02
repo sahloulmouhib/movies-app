@@ -9,7 +9,7 @@ import {
 } from '_models/MovieDetails/movieDetails.types';
 import {getMergeConfig, getSerializeQueryArgsConfig} from '_rtkQuery/helpers';
 
-import {API_KEY, MOVIES_BASE_URL} from '_utils/constants';
+import {API_KEY, MOVIES_BASE_URL, TIMEOUT_DURATION} from '_utils/constants';
 import {HttpMethodEnum} from '_utils/enums';
 
 export interface GetMovieListParams {
@@ -28,7 +28,10 @@ export interface GetMovieDetailsParams {
 // Define a service using a base URL and expected endpoints
 export const moviesApi = createApi({
   reducerPath: 'moviesApi',
-  baseQuery: fetchBaseQuery({baseUrl: MOVIES_BASE_URL}),
+  baseQuery: fetchBaseQuery({
+    baseUrl: MOVIES_BASE_URL,
+    timeout: TIMEOUT_DURATION,
+  }),
   endpoints: builder => ({
     getMoviesList: builder.query<MovieList, GetMovieListParams>({
       query: ({page, s}) => ({

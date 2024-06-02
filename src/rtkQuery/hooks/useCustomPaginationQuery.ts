@@ -113,6 +113,7 @@ const useCustomPaginationQuery = <T, D = void>(
       data !== undefined &&
       data.length > 0 &&
       !isAllDataLoaded &&
+      !loadingMoreDataError &&
       getNextPage();
   };
 
@@ -148,6 +149,7 @@ const useCustomPaginationQuery = <T, D = void>(
     getRefreshedData,
     getMoreData,
     nbrOfResults,
+    getNextPage,
   };
 };
 
