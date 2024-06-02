@@ -1,11 +1,11 @@
 import React, {useEffect} from 'react';
-import {View, ListRenderItemInfo} from 'react-native';
+import {ListRenderItemInfo} from 'react-native';
 
 import styles from './searchMoviesScreen.styles';
 
 import {type NativeStackScreenProps} from '@react-navigation/native-stack';
 
-import {SEARCH_MOVIES_SCREEN} from '_utils/screenNames';
+import {MOVIE_DETAILS_SCREEN, SEARCH_MOVIES_SCREEN} from '_utils/screenNames';
 import ScreenHeader from '_components/ScreenHeader/ScreenHeader';
 import {translate} from '_i18n';
 import CustomFlatList from '_components/CustomFlatList/CustomFlatlist';
@@ -16,9 +16,10 @@ import {
 } from '_store/api/moviesApi';
 import {Movie} from '_models/Movie/movie.types';
 import {MoviesStackParamList} from '_navigation/HomeStackNaigation/MoviesStackNavigation';
-import CustomTextInput from '_components/CustomTextInput/CustomTextInput';
 import {useSearch} from '_hooks/useSearch';
 import MovieItem from '_components/MovieItem/MovieItem';
+import {SafeAreaView} from 'react-native-safe-area-context';
+import CustomSearchBar from '_components/CustomSearchBar/CustomSearchBar';
 
 interface SearchMoviesScreenProps
   extends NativeStackScreenProps<
@@ -26,9 +27,9 @@ interface SearchMoviesScreenProps
     typeof SEARCH_MOVIES_SCREEN
   > {}
 
-const SearchMoviesScreen: React.FC<
-  SearchMoviesScreenProps
-> = (): JSX.Element => {
+const SearchMoviesScreen: React.FC<SearchMoviesScreenProps> = ({
+  navigation,
+}): JSX.Element => {
   const {searchText, setSearchText, debouncedSearchText} = useSearch();
   const result = useLazyGetMoviesListQuery();
   const {
@@ -51,7 +52,11 @@ const SearchMoviesScreen: React.FC<
   );
 
   const renderMovieItem = ({item}: ListRenderItemInfo<Movie>) => {
-    const onPress = () => {};
+    const onPress = () => {
+      navigation.navigate(MOVIE_DETAILS_SCREEN, {
+        id: item.imdbId,
+      });
+    };
     return (
       <MovieItem
         movieItem={item}
@@ -66,11 +71,11 @@ const SearchMoviesScreen: React.FC<
   }, [debouncedSearchText]);
 
   return (
-    <View style={styles.container}>
+    <SafeAreaView style={styles.container}>
       <ScreenHeader title={translate('movies.title')} />
-      <CustomTextInput
-        text={searchText}
+      <CustomSearchBar
         onChangeText={setSearchText}
+        text={searchText}
         placeholder={translate('movies.search')}
       />
       <CustomFlatList<Movie>
@@ -86,7 +91,7 @@ const SearchMoviesScreen: React.FC<
         refreshError={refreshError}
         renderItem={renderMovieItem}
       />
-    </View>
+    </SafeAreaView>
   );
 };
 

@@ -4,7 +4,7 @@ import {useEffect} from 'react';
 import Toast from 'react-native-toast-message';
 import {getUseQueryStateResult} from '../helpers';
 
-const useLazyQuery = <T>(useQueryResult: ReturnType<UseQuery<any>>) => {
+const useCustomQuery = <T>(useQueryResult: ReturnType<UseQuery<any>>) => {
   const {refetch} = useQueryResult;
   const {isLoading, failedError, isRefreshing, refreshError, error, data} =
     getUseQueryStateResult<T>({
@@ -30,4 +30,4 @@ const useLazyQuery = <T>(useQueryResult: ReturnType<UseQuery<any>>) => {
   };
 };
 
-export default useLazyQuery;
+export default useCustomQuery;

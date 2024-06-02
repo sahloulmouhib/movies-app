@@ -2,6 +2,7 @@ export const spacing = {
   LARGE: 32,
   DEFAULT: 16,
   SMALL: 8,
+  XSMALL: 4,
 };
 
 export const TOAST_DURATION = 5000;

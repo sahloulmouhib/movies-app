@@ -4,7 +4,7 @@ import {StyleSheet} from 'react-native';
 
 export default StyleSheet.create({
   container: {
-    padding: spacing.DEFAULT,
+    paddingVertical: spacing.DEFAULT,
     flexDirection: 'row',
     width: '100%',
     alignItems: 'center',
@@ -12,10 +12,10 @@ export default StyleSheet.create({
     backgroundColor: colors.WHITE,
   },
   titleText: {
-    fontSize: 20,
+    fontSize: 22,
     flex: 1,
+    fontWeight: 'bold',
     color: colors.BLACK,
-    textAlign: 'center',
   },
   hiddenIconContainer: {
     opacity: 0,

@@ -36,7 +36,7 @@ const MovieItem: React.FC<MovieItemProps> = ({
         </View>
       </TouchableOpacity>
       <TouchableOpacity onPress={onRemoveButtonPress}>
-        <Image source={icons.TRASH_OUTLINED} />
+        <Image source={icons.SMALL_ARROW} />
       </TouchableOpacity>
     </View>
   );

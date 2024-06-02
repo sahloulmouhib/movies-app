@@ -10,7 +10,7 @@ export default StyleSheet.create({
     alignItems: 'center',
   },
   movieItemContainer: {
-    gap: spacing.SMALL,
+    gap: spacing.DEFAULT,
     flex: 1,
     flexDirection: 'row',
   },

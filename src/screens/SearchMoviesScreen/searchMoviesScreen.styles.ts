@@ -7,16 +7,6 @@ export default StyleSheet.create({
     flex: 1,
     backgroundColor: colors.WHITE,
     paddingHorizontal: spacing.DEFAULT,
-    paddingBottom: spacing.LARGE,
-  },
-  innerContainer: {
-    flex: 1,
-    gap: spacing.DEFAULT,
-    justifyContent: 'center',
-  },
-  pokemonName: {
-    fontSize: 20,
-    marginVertical: spacing.LARGE,
-    fontWeight: 'bold',
+    gap: 16,
   },
 });
