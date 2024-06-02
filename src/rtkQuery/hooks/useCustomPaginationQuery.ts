@@ -1,4 +1,5 @@
 import {QueryStatus} from '@reduxjs/toolkit/query';
+import isEqual from 'lodash.isequal';
 import {
   DEFAULT_PAGE_NUMBER,
   DEFAULT_ROWS_PER_PAGE,
@@ -13,10 +14,11 @@ import Toast from 'react-native-toast-message';
 const useCustomPaginationQuery = <T, D = void>(
   useLazyQueryResult: ReturnType<UseLazyQuery<any>>,
   params?: Partial<D>,
-  pageArgName: string = 'offset',
-  rowsPerPageArgName: string = 'limit',
+  pageArgName: string = 'page',
+  rowsPerPageArgName: string = 'rowsPerPage',
 ) => {
   const [currentPage, setCurrentPage] = useState(INITIAL_PAGE_NUMBER);
+  const [oldArgs, setOldArgs] = useState();
   let [
     fetch,
     {
@@ -45,7 +47,10 @@ const useCustomPaginationQuery = <T, D = void>(
 
   const isLoading: boolean =
     (data === undefined && isDefaultLoading) ||
-    (isFetching && data?.length === 0);
+    (isFetching && data?.length === 0) ||
+    (!isEqual(oldArgs, originalArgs) &&
+      isFetching &&
+      pageArg === DEFAULT_PAGE_NUMBER);
   const failedError: string | undefined =
     (data === undefined || data.length === 0) && error
       ? handleError(error)
@@ -55,6 +60,7 @@ const useCustomPaginationQuery = <T, D = void>(
     data !== undefined &&
     data.length > 0 &&
     pageArg === DEFAULT_PAGE_NUMBER &&
+    isEqual(oldArgs, originalArgs) &&
     isFetching;
   const refreshError: string | undefined =
     data !== undefined &&
@@ -130,6 +136,12 @@ const useCustomPaginationQuery = <T, D = void>(
   }, [status]);
 
   useEffect(() => {
+    if (status === QueryStatus.fulfilled || status === QueryStatus.rejected) {
+      setOldArgs(originalArgs);
+    }
+  }, [status]);
+
+  useEffect(() => {
     refreshError &&
       Toast.show({
         type: ToastType.Success,
@@ -150,6 +162,7 @@ const useCustomPaginationQuery = <T, D = void>(
     getMoreData,
     nbrOfResults,
     getNextPage,
+    originalArgs,
   };
 };
 

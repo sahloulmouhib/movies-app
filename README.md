@@ -1,12 +1,35 @@
 This is a new [**React Native**](https://reactnative.dev) project, bootstrapped using [`@react-native-community/cli`](https://github.com/react-native-community/cli).
 
+# Movies App
+
+This application is a movies app that allows users to search for movies and view their details using the [OMDb API](http://www.omdbapi.com/).
+
 # Getting Started
 
->**Note**: Make sure you have completed the [React Native - Environment Setup](https://reactnative.dev/docs/environment-setup) instructions till "Creating a new application" step, before proceeding.
+> **Note**: Make sure you have completed the [React Native - Environment Setup](https://reactnative.dev/docs/environment-setup) instructions till "Creating a new application" step, before proceeding.
 
-## Step 1: Start the Metro Server
+## Step 1: Install the Dependencies
 
-First, you will need to start **Metro**, the JavaScript _bundler_ that ships _with_ React Native.
+You can install the dependencies by running the following command:
+
+```bash
+# using npm
+npm install
+
+# OR using Yarn
+yarn
+```
+
+### For iOS you need an additional step
+
+```bash
+bundle install
+cd ios && pod install
+```
+
+## Step 2: Start the Metro Server
+
+You will need to start **Metro**, the JavaScript _bundler_ that ships _with_ React Native.
 
 To start Metro, run the following command from the _root_ of your React Native project:
 
@@ -14,11 +37,12 @@ To start Metro, run the following command from the _root_ of your React Native p
 # using npm
 npm start
 
+
 # OR using Yarn
 yarn start
 ```
 
-## Step 2: Start your Application
+## Step 3: Start your Application
 
 Let Metro Bundler run in its _own_ terminal. Open a _new_ terminal from the _root_ of your React Native project. Run the following command to start your _Android_ or _iOS_ app:
 
