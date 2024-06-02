@@ -8,5 +8,6 @@ export default StyleSheet.create({
     backgroundColor: colors.WHITE,
     paddingHorizontal: spacing.DEFAULT,
     gap: 16,
+    paddingBottom: 16,
   },
 });

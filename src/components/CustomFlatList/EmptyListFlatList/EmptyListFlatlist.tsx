@@ -4,7 +4,7 @@ import {View} from 'react-native';
 import styles from './emptyListFlatList.styles';
 import CustomEmptyList from '_components/CustomEmptyList/CustomEmptyList';
 
-const DefaultEmptyListFlatList = () => {
+const EmptyListFlatList = () => {
   return (
     <View style={styles.emptyListContainer}>
       <CustomEmptyList />
@@ -12,4 +12,4 @@ const DefaultEmptyListFlatList = () => {
   );
 };
 
-export default DefaultEmptyListFlatList;
+export default EmptyListFlatList;

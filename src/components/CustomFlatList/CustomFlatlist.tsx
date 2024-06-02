@@ -7,7 +7,7 @@ import {
 } from 'react-native';
 import Toast from 'react-native-toast-message';
 
-import DefaultEmptyListFlatList from './EmptyListFlatList/EmptyListFlatlist';
+import EmptyListFlatList from './EmptyListFlatList/EmptyListFlatlist';
 import FooterFlatList from './FooterFlatList/FooterFlatList';
 import LoaderFlatList from './LoaderFlatList/LoaderFlatList';
 import RefreshControlFlatList from './RefreshControlFlatList/RefreshControlFlatList';
@@ -78,7 +78,7 @@ const CustomFlatList = <T,>({
   }, [failedError]);
 
   const renderEmptyList = useMemo(() => {
-    return <DefaultEmptyListFlatList />;
+    return <EmptyListFlatList />;
   }, []);
 
   const renderFooter = useMemo(() => {

@@ -4,11 +4,12 @@ import {
   View,
   type StyleProp,
   type ViewStyle,
+  DimensionValue,
 } from 'react-native';
 
 interface CustomDividerProps {
-  height?: number | string;
-  width?: number | string;
+  height?: DimensionValue;
+  width?: DimensionValue;
   backgroundColor?: string;
   alignSelf?: FlexAlignType | 'auto' | undefined;
   style?: StyleProp<ViewStyle>;

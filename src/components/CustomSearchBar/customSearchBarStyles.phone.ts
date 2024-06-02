@@ -1,11 +1,13 @@
 import {StyleSheet} from 'react-native';
 
 import {colors} from '_utils/colors';
+import {IS_IOS} from '_utils/helpers';
 
 export default StyleSheet.create({
   container: {
     backgroundColor: colors.WHITE,
-    padding: 16,
+    paddingHorizontal: 16,
+    paddingVertical: IS_IOS ? 8 : 4,
     borderRadius: 12,
     flexDirection: 'row',
     alignItems: 'center',

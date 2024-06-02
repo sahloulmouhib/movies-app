@@ -22,9 +22,8 @@ const CustomEmptyList = ({
     <View style={styles.container}>
       <Image style={styles.noResultsIcon} source={icons.NO_RESULTS} />
       <CustomDivider height={16} />
-      <Text>{title}</Text>
-      <CustomDivider height={8} />
-      <Text>{description}</Text>
+      <Text style={styles.titleText}>{title}</Text>
+      <Text style={styles.descriptionText}>{description}</Text>
     </View>
   );
 };

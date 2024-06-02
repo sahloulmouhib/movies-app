@@ -1,4 +1,5 @@
 import {colors} from '_utils/colors';
+import {IS_IOS} from '_utils/helpers';
 import {StyleSheet} from 'react-native';
 
 export default StyleSheet.create({
@@ -23,7 +24,8 @@ export default StyleSheet.create({
     justifyContent: 'flex-end',
   },
   imageOverlayStyle: {
-    borderRadius: 32,
+    borderBottomRightRadius: 32,
+    borderBottomLeftRadius: 32,
   },
   movieReleasedDateText: {
     fontSize: 16,
@@ -40,18 +42,20 @@ export default StyleSheet.create({
   image: {
     height: 450,
     width: '100%',
-    borderEndEndRadius: 32,
-    borderEndStartRadius: 32,
+    borderBottomRightRadius: 32,
+    borderBottomLeftRadius: 32,
   },
   categoryTitleText: {
     fontSize: 22,
     fontWeight: 'bold',
+    color: colors.BLACK,
   },
   text: {
     fontSize: 16,
+    color: colors.BLACK,
   },
   backButtonContainer: {
-    top: 64,
+    top: IS_IOS ? 64 : 32,
     left: 16,
     backgroundColor: colors.WHITE,
     borderRadius: 30,
