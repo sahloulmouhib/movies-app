@@ -20,6 +20,7 @@ import {useSearch} from '_hooks/useSearch';
 import MovieItem from '_components/MovieItem/MovieItem';
 import {SafeAreaView} from 'react-native-safe-area-context';
 import CustomSearchBar from '_components/CustomSearchBar/CustomSearchBar';
+import CustomDivider from '_components/CustomDivider/CustomDivider';
 
 interface SearchMoviesScreenProps
   extends NativeStackScreenProps<
@@ -57,13 +58,11 @@ const SearchMoviesScreen: React.FC<SearchMoviesScreenProps> = ({
         id: item.imdbId,
       });
     };
-    return (
-      <MovieItem
-        movieItem={item}
-        onPress={onPress}
-        onRemoveButtonPress={onPress}
-      />
-    );
+    return <MovieItem movieItem={item} onPress={onPress} />;
+  };
+
+  const renderItemSeparator = () => {
+    return <CustomDivider height={16} />;
   };
 
   useEffect(() => {
@@ -85,6 +84,7 @@ const SearchMoviesScreen: React.FC<SearchMoviesScreenProps> = ({
         isLoadingMore={isLoadingMore}
         getDataOnMount={getDataOnMount}
         getMoreData={getMoreData}
+        ItemSeparatorComponent={renderItemSeparator}
         getRefreshedData={getRefreshedData}
         failedError={failedError}
         loadingMoreError={loadingMoreDataError}

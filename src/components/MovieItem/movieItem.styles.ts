@@ -4,10 +4,12 @@ import {StyleSheet} from 'react-native';
 
 export default StyleSheet.create({
   container: {
-    paddingVertical: spacing.DEFAULT,
     flexDirection: 'row',
     width: '100%',
     alignItems: 'center',
+    borderWidth: StyleSheet.hairlineWidth,
+    borderColor: colors.GREY_LIGHT,
+    borderRadius: spacing.DEFAULT,
   },
   movieItemContainer: {
     gap: spacing.DEFAULT,
@@ -15,6 +17,7 @@ export default StyleSheet.create({
     flexDirection: 'row',
   },
   textsContainer: {
+    paddingVertical: spacing.DEFAULT,
     flex: 1,
     gap: spacing.SMALL,
   },
@@ -23,7 +26,7 @@ export default StyleSheet.create({
     color: colors.BLACK,
     fontWeight: '600',
   },
-  languageText: {
+  yearText: {
     fontSize: 14,
     color: colors.BLACK,
     fontWeight: '400',
@@ -32,5 +35,10 @@ export default StyleSheet.create({
     borderRadius: spacing.SMALL,
     width: 80,
     height: 100,
+  },
+  arrowIcon: {
+    tintColor: colors.GREY_LIGHT,
+    width: 30,
+    height: 30,
   },
 });

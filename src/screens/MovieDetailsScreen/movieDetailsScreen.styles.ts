@@ -22,6 +22,9 @@ export default StyleSheet.create({
     bottom: 0,
     justifyContent: 'flex-end',
   },
+  imageOverlayStyle: {
+    borderRadius: 32,
+  },
   movieReleasedDateText: {
     fontSize: 16,
     color: colors.WHITE,
@@ -35,8 +38,10 @@ export default StyleSheet.create({
     color: colors.WHITE,
   },
   image: {
-    height: 400,
+    height: 450,
     width: '100%',
+    borderEndEndRadius: 32,
+    borderEndStartRadius: 32,
   },
   categoryTitleText: {
     fontSize: 22,
@@ -46,7 +51,7 @@ export default StyleSheet.create({
     fontSize: 16,
   },
   backButtonContainer: {
-    top: 16,
+    top: 64,
     left: 16,
     backgroundColor: colors.WHITE,
     borderRadius: 30,

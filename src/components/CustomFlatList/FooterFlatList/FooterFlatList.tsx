@@ -3,7 +3,7 @@ import {View} from 'react-native';
 
 import CustomLoader from '_components/CustomLoader/CustomLoader';
 
-import CustomReloaderFlatList from '../ErrorHandlerFlatList/ErrorHandlerFlatList';
+import CustomErrorHandler from '../../CustomErrorHandler/CustomErrorHandler';
 
 import styles from './footerFlatList.styles';
 
@@ -20,16 +20,16 @@ const FooterFlatList: React.FC<FooterFlatListProps> = ({
 }) => {
   if (isLoadingMore) {
     return (
-      <View style={styles.footerContainer}>
+      <View style={styles.loaderContainer}>
         <CustomLoader />
       </View>
     );
   } else if (getMoreData && !isLoadingMore && loadingMoreError) {
     return (
       <View style={styles.footerContainer}>
-        <CustomReloaderFlatList
+        <CustomErrorHandler
           errorMessage={loadingMoreError}
-          onReload={getMoreData}
+          onButtonPress={getMoreData}
         />
       </View>
     );

@@ -1,7 +1,7 @@
 import React from 'react';
 
 import CustomLoader from '_components/CustomLoader/CustomLoader';
-import CustomErrorHandler from '../CustomErrorHandler/CustomErrorHandler';
+import CustomErrorHandler from '_components/CustomErrorHandler/CustomErrorHandler';
 
 interface CustomLoaderAndErrorHandlerProps {
   children: React.ReactNode;

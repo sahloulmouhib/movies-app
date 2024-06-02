@@ -1,12 +1,13 @@
 import React from 'react';
-import {Text, View} from 'react-native';
+import {View} from 'react-native';
 
 import styles from './emptyListFlatList.styles';
+import CustomEmptyList from '_components/CustomEmptyList/CustomEmptyList';
 
 const DefaultEmptyListFlatList = () => {
   return (
     <View style={styles.emptyListContainer}>
-      <Text style={styles.text}>Empty List</Text>
+      <CustomEmptyList />
     </View>
   );
 };

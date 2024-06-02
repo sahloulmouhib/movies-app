@@ -8,36 +8,29 @@ import {Movie} from '_models/Movie/movie.types';
 interface MovieItemProps {
   movieItem: Movie;
   onPress: () => void;
-  onRemoveButtonPress: () => void;
 }
 
-const MovieItem: React.FC<MovieItemProps> = ({
-  movieItem,
-  onRemoveButtonPress,
-  onPress,
-}) => {
-  const {title: name, yearOfRelease: language, poster: imageUrl} = movieItem;
+const MovieItem: React.FC<MovieItemProps> = ({movieItem, onPress}) => {
+  const {title, yearOfRelease, poster} = movieItem;
 
   return (
     <View style={styles.container}>
       <TouchableOpacity style={styles.movieItemContainer} onPress={onPress}>
         <Image
           style={styles.image}
-          source={{uri: imageUrl}}
+          source={{uri: poster}}
           defaultSource={icons.DEFAULT_PLACEHOLDER}
         />
         <View style={styles.textsContainer}>
           <Text style={styles.nameText} numberOfLines={2}>
-            {name}
+            {title}
           </Text>
-          <Text style={styles.languageText} numberOfLines={1}>
-            {language}
+          <Text style={styles.yearText} numberOfLines={1}>
+            {yearOfRelease}
           </Text>
         </View>
       </TouchableOpacity>
-      <TouchableOpacity onPress={onRemoveButtonPress}>
-        <Image source={icons.SMALL_ARROW} />
-      </TouchableOpacity>
+      <Image style={styles.arrowIcon} source={icons.SMALL_ARROW} />
     </View>
   );
 };

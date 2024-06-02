@@ -1,14 +1,20 @@
 import React, {useMemo} from 'react';
-import {FlatList, FlatListProps, ListRenderItem, View} from 'react-native';
+import {
+  FlatList,
+  FlatListProps,
+  KeyboardAvoidingView,
+  ListRenderItem,
+} from 'react-native';
 import Toast from 'react-native-toast-message';
 
 import DefaultEmptyListFlatList from './EmptyListFlatList/EmptyListFlatlist';
 import FooterFlatList from './FooterFlatList/FooterFlatList';
 import LoaderFlatList from './LoaderFlatList/LoaderFlatList';
 import RefreshControlFlatList from './RefreshControlFlatList/RefreshControlFlatList';
-import ErrorHandlerFlatList from './ErrorHandlerFlatList/ErrorHandlerFlatList';
 import styles from './customFlatList.styles';
 import {toastConfig} from '_utils/customToastConfig/toastConfig';
+import {IS_IOS} from '_utils/helpers';
+import CustomErrorHandler from '../CustomErrorHandler/CustomErrorHandler';
 
 const ON_END_REACHED_THRESHOLD = 0.4;
 interface CustomFlatListProps<T = any> extends FlatListProps<T> {
@@ -64,9 +70,9 @@ const CustomFlatList = <T,>({
       return null;
     }
     return (
-      <ErrorHandlerFlatList
+      <CustomErrorHandler
         errorMessage={failedError}
-        onReload={getDataOnMount}
+        onButtonPress={getDataOnMount}
       />
     );
   }, [failedError]);
@@ -125,10 +131,12 @@ const CustomFlatList = <T,>({
     getRefreshedData,
   ]);
   return (
-    <View style={styles.container}>
+    <KeyboardAvoidingView
+      style={styles.container}
+      behavior={IS_IOS ? 'padding' : 'height'}>
       {renderFlatList}
       <Toast position="bottom" bottomOffset={0} config={toastConfig} />
-    </View>
+    </KeyboardAvoidingView>
   );
 };
 

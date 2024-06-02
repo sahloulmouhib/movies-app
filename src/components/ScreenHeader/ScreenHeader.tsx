@@ -3,7 +3,6 @@ import {View, Text, Image, TouchableOpacity} from 'react-native';
 
 import styles from './screenHeader.styles';
 import {icons} from '_utils/icons';
-import CustomSeparator from '_components/CustomSeparator/CustomSeparator';
 
 interface ScreenHeaderProps {
   title: string;
@@ -30,7 +29,6 @@ const ScreenHeader: React.FC<ScreenHeaderProps> = ({title, onBackPress}) => {
           </TouchableOpacity>
         )}
       </View>
-      <CustomSeparator />
     </>
   );
 };

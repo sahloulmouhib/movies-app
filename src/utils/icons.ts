@@ -9,4 +9,5 @@ export const icons = {
   CLOCK_OUTLINE: require('../assets/icons/clock_outline/clock_outline.png'),
   LOOP: require('../assets/icons/loop/loop.png'),
   CLOSE: require('../assets/icons/close/close.png'),
+  NO_RESULTS: require('../assets/icons/empty_list/empty_list.png'),
 };
