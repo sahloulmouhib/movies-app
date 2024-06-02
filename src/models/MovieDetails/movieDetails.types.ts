@@ -1,3 +1,6 @@
+import {RatingsSitesEnum} from '_utils/enums';
+import {ImageSourcePropType} from 'react-native';
+
 export interface MovieDetailsResponse {
   Title: string;
   Year: string;
@@ -7,6 +10,7 @@ export interface MovieDetailsResponse {
   Plot: string;
   Poster: string;
   imdbRating: string;
+  Ratings: MovieRatingResponse[];
 }
 
 export interface MovieDetails {
@@ -18,4 +22,15 @@ export interface MovieDetails {
   plot: string;
   poster: string;
   imdbRating: string;
+  ratings: MovieRating[];
+}
+
+export interface MovieRatingResponse {
+  Source: RatingsSitesEnum;
+  Value: string;
+}
+
+export interface MovieRating {
+  icon: ImageSourcePropType;
+  value: string;
 }

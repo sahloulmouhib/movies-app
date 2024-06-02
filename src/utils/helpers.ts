@@ -1,7 +1,8 @@
 import {MovieDetailItemProps} from '_components/MovieDetailItem/MovieDetailItem';
 import {MovieDetails} from '_models/MovieDetails/movieDetails.types';
-import {Platform} from 'react-native';
+import {ImageSourcePropType, Platform} from 'react-native';
 import {icons} from './icons';
+import {RatingsSitesEnum} from './enums';
 
 export const IS_IOS = Platform.OS === 'ios';
 
@@ -23,4 +24,19 @@ export const getMovieDetailItemList = (
       icon: icons.CLOCK_OUTLINE,
     },
   ];
+};
+
+export const getMovieRatingIcon = (
+  source: RatingsSitesEnum,
+): ImageSourcePropType => {
+  switch (source) {
+    case RatingsSitesEnum.Imdb:
+      return icons.IMDB;
+    case RatingsSitesEnum.RottenTomatoes:
+      return icons.ROTTEN_TOMATOES;
+    case RatingsSitesEnum.Metacritic:
+      return icons.METACRITIC;
+    default:
+      return icons.IMDB;
+  }
 };

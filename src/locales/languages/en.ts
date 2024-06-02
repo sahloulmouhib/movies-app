@@ -19,6 +19,7 @@ export const en = {
     search: 'Search movies...',
     plot: 'Plot',
     cast: 'Cast',
+    ratings: 'Ratings',
   },
 };
 

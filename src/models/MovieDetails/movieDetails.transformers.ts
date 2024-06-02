@@ -1,4 +1,10 @@
-import {MovieDetails, MovieDetailsResponse} from './movieDetails.types';
+import {getMovieRatingIcon} from '_utils/helpers';
+import {
+  MovieDetails,
+  MovieDetailsResponse,
+  MovieRating,
+  MovieRatingResponse,
+} from './movieDetails.types';
 
 export const decodeMovieDetails = (
   data: MovieDetailsResponse,
@@ -12,5 +18,19 @@ export const decodeMovieDetails = (
     plot: data.Plot,
     poster: data.Poster,
     imdbRating: data.imdbRating,
+    ratings: decodeMovieRatings(data.Ratings),
   };
+};
+
+export const decodeMovieRating = (data: MovieRatingResponse): MovieRating => {
+  return {
+    icon: getMovieRatingIcon(data.Source),
+    value: data.Value,
+  };
+};
+
+export const decodeMovieRatings = (
+  data: MovieRatingResponse[],
+): MovieRating[] => {
+  return data.map(decodeMovieRating);
 };

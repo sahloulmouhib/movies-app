@@ -24,6 +24,7 @@ import ActorItemList from '_components/ActorItemList/ActorItemList';
 import {SafeAreaView} from 'react-native-safe-area-context';
 import {getMovieDetailItemList} from '_utils/helpers';
 import {translate} from '_i18n';
+import MovieRatingItemList from '_components/MovieIRatingtemList/MovieRatingItemList';
 
 interface MovieDetailsScreenProps
   extends NativeStackScreenProps<
@@ -93,6 +94,12 @@ const MovieDetailsScreen: React.FC<MovieDetailsScreenProps> = ({
                     {translate('movies.cast')}
                   </Text>
                   <ActorItemList actors={data.actors} />
+                </View>
+                <View style={styles.categoryContainer}>
+                  <Text style={styles.categoryTitleText}>
+                    {translate('movies.ratings')}
+                  </Text>
+                  <MovieRatingItemList list={data.ratings} />
                 </View>
               </View>
             </ScrollView>

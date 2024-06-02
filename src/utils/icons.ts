@@ -10,4 +10,7 @@ export const icons = {
   LOOP: require('../assets/icons/loop/loop.png'),
   CLOSE: require('../assets/icons/close/close.png'),
   NO_RESULTS: require('../assets/icons/empty_list/empty_list.png'),
+  IMDB: require('../assets/icons/imdb/imdb.png'),
+  ROTTEN_TOMATOES: require('../assets/icons/rotten_tomatoes/rotten_tomatoes.png'),
+  METACRITIC: require('../assets/icons/metacritic/metacritic.png'),
 };

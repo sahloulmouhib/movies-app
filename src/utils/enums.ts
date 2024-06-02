@@ -5,3 +5,9 @@ export enum HttpMethodEnum {
   Delete = 'DELETE',
   Patch = 'PATCH',
 }
+
+export enum RatingsSitesEnum {
+  Imdb = 'Internet Movie Database',
+  RottenTomatoes = 'Rotten Tomatoes',
+  Metacritic = 'Metacritic',
+}

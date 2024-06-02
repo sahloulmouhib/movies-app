@@ -7,7 +7,7 @@ export default StyleSheet.create({
   container: {
     backgroundColor: colors.WHITE,
     paddingHorizontal: 16,
-    paddingVertical: IS_IOS ? 8 : 4,
+    paddingVertical: IS_IOS ? 16 : 4,
     borderRadius: 12,
     flexDirection: 'row',
     alignItems: 'center',
