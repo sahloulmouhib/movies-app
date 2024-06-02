@@ -1,5 +1,4 @@
 import {colors} from '_utils/colors';
-import {spacing} from '_utils/constants';
 import {StyleSheet} from 'react-native';
 
 export default StyleSheet.create({
@@ -9,17 +8,17 @@ export default StyleSheet.create({
     alignItems: 'center',
     borderWidth: StyleSheet.hairlineWidth,
     borderColor: colors.GREY_LIGHT,
-    borderRadius: spacing.DEFAULT,
+    borderRadius: 16,
   },
   movieItemContainer: {
-    gap: spacing.DEFAULT,
+    gap: 16,
     flex: 1,
     flexDirection: 'row',
   },
   textsContainer: {
-    paddingVertical: spacing.DEFAULT,
+    paddingVertical: 16,
     flex: 1,
-    gap: spacing.SMALL,
+    gap: 8,
   },
   nameText: {
     fontSize: 16,
@@ -32,7 +31,7 @@ export default StyleSheet.create({
     fontWeight: '400',
   },
   image: {
-    borderRadius: spacing.SMALL,
+    borderRadius: 8,
     width: 80,
     height: 100,
   },

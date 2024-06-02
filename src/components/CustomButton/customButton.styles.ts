@@ -1,15 +1,14 @@
 import {colors} from '_utils/colors';
-import {spacing} from '_utils/constants';
 import {StyleSheet} from 'react-native';
 
 export default StyleSheet.create({
   container: {
-    padding: spacing.DEFAULT,
-    gap: spacing.SMALL,
+    padding: 16,
+    gap: 8,
     justifyContent: 'center',
     alignItems: 'center',
     backgroundColor: colors.PRIMARY,
-    borderRadius: spacing.SMALL,
+    borderRadius: 8,
     flexDirection: 'row',
   },
   titleText: {

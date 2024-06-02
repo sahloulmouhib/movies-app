@@ -1,7 +1,6 @@
 import {StyleSheet} from 'react-native';
 
 import {colors} from '_utils/colors';
-import {spacing} from '_utils/constants';
 
 export default StyleSheet.create({
   text1: {
@@ -14,7 +13,7 @@ export default StyleSheet.create({
     color: colors.WHITE,
   },
   customToast: {
-    gap: spacing.SMALL,
+    gap: 8,
     padding: 20,
     width: '90%',
     backgroundColor: colors.BLACK,

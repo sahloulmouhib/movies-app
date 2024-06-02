@@ -1,7 +1,6 @@
 import {StyleSheet} from 'react-native';
 
 import {colors} from '_utils/colors';
-import {spacing} from '_utils/constants';
 
 export default StyleSheet.create({
   container: {
@@ -13,9 +12,9 @@ export default StyleSheet.create({
     borderColor: colors.GREY_LIGHT,
     backgroundColor: colors.WHITE,
     borderRadius: 55 / 2,
-    paddingVertical: spacing.XSMALL,
-    paddingHorizontal: spacing.SMALL,
-    gap: spacing.XSMALL,
+    paddingVertical: 4,
+    paddingHorizontal: 8,
+    gap: 4,
   },
   icon: {
     width: 14,
