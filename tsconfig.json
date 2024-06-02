@@ -1,3 +1,19 @@
 {
-  "extends": "@react-native/typescript-config/tsconfig.json"
+  "extends": "@react-native/typescript-config/tsconfig.json",
+  "compilerOptions": {
+    "baseUrl": "./" /* Base directory to resolve non-absolute module names. */,
+    "paths": {
+      "_i18n": ["./src/locales/i18n"],
+      "_components/*": ["./src/components/*"],
+      "_models/*": ["./src/models/*"],
+      "_enums/*": ["./src/enums/*"],
+      "_screens/*": ["./src/screens/*"],
+      "_utils/*": ["./src/utils/*"],
+      "_navigation/*": ["./src/navigation/*"],
+      "_languages/*": ["./src/locales/languages/*"],
+      "_hooks/*": ["./src/hooks/*"],
+      "_store/*": ["./src/store/*"],
+      "_rtkQuery/*": ["./src/rtkQuery/*"]
+    }
+  }
 }
