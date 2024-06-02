@@ -15,10 +15,10 @@ import {
   useLazyGetMoviesListQuery,
 } from '_store/api/moviesApi';
 import {Movie} from '_models/Movie/movie.types';
-import MovieItem from '_components/MovieItem/MovieItem';
 import {MoviesStackParamList} from '_navigation/HomeStackNaigation/MoviesStackNavigation';
 import CustomTextInput from '_components/CustomTextInput/CustomTextInput';
 import {useSearch} from '_hooks/useSearch';
+import MovieItem from '_components/MovieItem/MovieItem';
 
 interface SearchMoviesScreenProps
   extends NativeStackScreenProps<
@@ -52,7 +52,13 @@ const SearchMoviesScreen: React.FC<
 
   const renderMovieItem = ({item}: ListRenderItemInfo<Movie>) => {
     const onPress = () => {};
-    return <MovieItem onPress={onPress} movie={item} />;
+    return (
+      <MovieItem
+        movieItem={item}
+        onPress={onPress}
+        onRemoveButtonPress={onPress}
+      />
+    );
   };
 
   useEffect(() => {

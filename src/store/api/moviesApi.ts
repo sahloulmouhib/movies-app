@@ -4,7 +4,7 @@ import {decodeMovieList} from '_models/Movie/movie.transformers';
 import {MovieList, MovieListResponse} from '_models/Movie/movie.types';
 import {getMergeConfig, getSerializeQueryArgsConfig} from '_rtkQuery/helpers';
 
-import {MOVIES_BASE_URL} from '_utils/constants';
+import {API_KEY, MOVIES_BASE_URL} from '_utils/constants';
 import {HttpMethodEnum} from '_utils/enums';
 
 export interface GetMovieListParams {
@@ -24,7 +24,7 @@ export const moviesApi = createApi({
         url: '',
         params: {
           page,
-          apiKey: '52f8314a',
+          apiKey: API_KEY,
           s,
         },
         method: HttpMethodEnum.Get,

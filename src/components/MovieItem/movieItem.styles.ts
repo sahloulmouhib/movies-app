@@ -4,24 +4,33 @@ import {StyleSheet} from 'react-native';
 
 export default StyleSheet.create({
   container: {
-    gap: spacing.DEFAULT,
-    padding: spacing.DEFAULT,
+    paddingVertical: spacing.DEFAULT,
     flexDirection: 'row',
+    width: '100%',
     alignItems: 'center',
   },
-  nameText: {
-    textAlignVertical: 'top',
+  movieItemContainer: {
+    gap: spacing.SMALL,
     flex: 1,
-    fontSize: 16,
-    fontWeight: '600',
-    color: colors.BLACK,
+    flexDirection: 'row',
   },
-  addIcon: {
-    tintColor: colors.PRIMARY,
+  textsContainer: {
+    flex: 1,
+    gap: spacing.SMALL,
+  },
+  nameText: {
+    fontSize: 16,
+    color: colors.BLACK,
+    fontWeight: '600',
+  },
+  languageText: {
+    fontSize: 14,
+    color: colors.BLACK,
+    fontWeight: '400',
   },
   image: {
-    width: 60,
-    height: 60,
-    borderRadius: 30,
+    borderRadius: spacing.SMALL,
+    width: 80,
+    height: 100,
   },
 });

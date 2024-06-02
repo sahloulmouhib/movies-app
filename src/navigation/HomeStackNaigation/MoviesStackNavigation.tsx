@@ -17,7 +17,7 @@ const MoviesStack = createNativeStackNavigator<MoviesStackParamList>();
  */
 const MoviesStackNavigation = (): JSX.Element => {
   return (
-    <MoviesStack.Navigator>
+    <MoviesStack.Navigator screenOptions={{headerShown: false}}>
       <MoviesStack.Screen
         name={SEARCH_MOVIES_SCREEN}
         component={SearchMoviesScreen}
